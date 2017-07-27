@@ -1,0 +1,55 @@
+querof_code_resume:
+    resource: "@querofCodeBundle/Resources/config/routing/resume.yml"
+    prefix:   /resume
+
+querof_code_menuoptions:
+    resource: "@querofCodeBundle/Resources/config/routing/menuoptions.yml"
+    prefix:   /menuoptions
+
+querof_code_menu:
+    resource: "@querofCodeBundle/Resources/config/routing/menu.yml"
+    prefix:   /menu
+
+code_engine_main_homepage:
+    path:     /
+    defaults: { _controller: querofCodeBundle:Login:index }
+
+code_engine_login:
+    resource: "@querofCodeBundle/Resources/config/routing/login.yml"
+    prefix:   /login
+
+querof_code_activity:
+    resource: "@querofCodeBundle/Resources/config/routing/activity.yml"
+    prefix:   /activity
+
+querof_code_roles:
+    resource: "@querofCodeBundle/Resources/config/routing/roles.yml"
+    prefix:   /roles
+
+querof_code_activityticket:
+        resource: "@querofCodeBundle/Resources/config/routing/activityticket.yml"
+        prefix:   /activityticket
+
+querof_code_analyst:
+        resource: "@querofCodeBundle/Resources/config/routing/analyst.yml"
+        prefix:   /analyst
+
+querof_code_ticket:
+        resource: "@querofCodeBundle/Resources/config/routing/ticket.yml"
+        prefix:   /ticket
+
+querof_code_category:
+        resource: "@querofCodeBundle/Resources/config/routing/category.yml"
+        prefix:   /category
+
+querof_code_service:
+        resource: "@querofCodeBundle/Resources/config/routing/service.yml"
+        prefix:   /service
+
+querof_code_customer:
+    resource: "@querofCodeBundle/Resources/config/routing/customer.yml"
+    prefix:   /customer
+
+querof_code_homepage:
+    path:     /
+    defaults: { _controller: querofCodeBundle:Default:index }

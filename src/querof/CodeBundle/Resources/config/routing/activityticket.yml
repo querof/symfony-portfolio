@@ -1,0 +1,24 @@
+activityticket_index:
+    path:     /
+    defaults: { _controller: "querofCodeBundle:ActivityTicket:index" }
+    methods:  GET
+
+activityticket_show:
+    path:     /{id}/show
+    defaults: { _controller: "querofCodeBundle:ActivityTicket:show" }
+    methods:  GET
+
+activityticket_new:
+    path:     /new
+    defaults: { _controller: "querofCodeBundle:ActivityTicket:new" }
+    methods:  [GET, POST]
+
+activityticket_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "querofCodeBundle:ActivityTicket:edit" }
+    methods:  [GET, POST]
+
+activityticket_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "querofCodeBundle:ActivityTicket:delete" }
+    methods:  DELETE

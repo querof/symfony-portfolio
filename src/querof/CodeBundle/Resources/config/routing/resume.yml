@@ -1,0 +1,4 @@
+resume_index:
+    path:     /
+    defaults: { _controller: "querofCodeBundle:Resume:index" }
+    methods:  GET

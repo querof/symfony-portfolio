@@ -1,0 +1,59 @@
+querof\CodeBundle\Entity\Controller:
+    type: entity
+    table: controller
+    indexes:
+        idx_605451532a66c4e3:
+            columns:
+                - modulos_id
+        IDX_4CF2669ACCD7E912:
+            columns:
+                - menu_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        route:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        order:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+    manyToOne:
+        menu:
+            targetEntity: Menu
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                menu_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        modulos:
+            targetEntity: Menu
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                modulos_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

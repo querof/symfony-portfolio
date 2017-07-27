@@ -1,0 +1,20 @@
+{% extends 'base.forma.html.twig' %}
+
+{% block datos -%}
+        
+        {{ form_start(form, {'attr': {'class': 'form-horizontal'}})  }}          
+            
+			
+             <div class="form-group">
+               	<div class="col-sm-12">
+                	{{ form(form) }}
+ 					
+                    {% include 'base.botones.html.twig' %}
+                </div>
+            </div>
+            
+        {{ form_end(form) }}
+	        
+	        	        
+	
+{% endblock %}

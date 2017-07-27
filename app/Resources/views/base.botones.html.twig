@@ -1,0 +1,30 @@
+{% set controller =  getControllerName()  %}
+{% set action =  getActionName()  %}
+{% set obj = _context[getObjName()] %}
+
+{% if action!='show' and action!='index' %}
+	<div class="hr-line-dashed"></div>
+{% endif %}
+<div class="col-sm-12 ">
+
+    <div>
+    	{% if action=='new' %}
+
+		    	<button  class="btn btn-w-m btn-primary"  >Add</button>
+
+		{% elseif action=='edit' %}
+
+		    	<button type="submit" class="btn btn-w-m btn-primary " >Save</button>
+
+		    	<a onclick="form.submit();" class="btn btn-w-m btn-danger">Delete</a>
+
+		{% elseif action=='show' %}
+
+		    	<a href="{{ path(controller~'_edit', { 'id': obj.id }) }}" class="btn btn-w-m btn-primary">Edit</a>
+
+		{% elseif action=='index' %}
+				<a href="{{ path(controller~'_new') }}" class="btn btn-w-m btn-primary">Add</a>
+    	{% endif %}
+    	<a href="{{ path(controller~'_index') }}" class="btn btn-w-m btn-white">Show List</a>
+    </div>
+</div>

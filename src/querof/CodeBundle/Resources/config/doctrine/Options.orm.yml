@@ -1,0 +1,46 @@
+querof\CodeBundle\Entity\Options:
+    type: entity
+    table: options
+    indexes:
+        IDX_D035FA87CCD7E912:
+            columns:
+                - menu_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        route:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+        ord:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+    manyToOne:
+        menu:
+            targetEntity: Menu
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                menu_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

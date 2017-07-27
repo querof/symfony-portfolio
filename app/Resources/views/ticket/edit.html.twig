@@ -1,0 +1,33 @@
+{% extends 'base.forma.html.twig' %}
+
+{% block datos -%}
+
+
+    {{ form_start(edit_form, {'attr': {'class': 'form-horizontal'}}) }}
+
+             <div class="form-group">
+               	<div class="col-sm-12">
+
+			        {{ form_start(edit_form) }}
+                <div class="col-sm-12">
+                  <div class="form-group" id="data_1">
+                      {{ form_label(edit_form.date) }}
+                      <div class="input-group date">
+
+
+                          {{ form_widget(edit_form.date) }}  <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                      </div>
+                  </div>
+                </div>
+                {{ form_label(edit_form.customer) }}
+                {{ form_widget(edit_form.customer) }}
+              {{ form_end(edit_form) }}
+
+			        {% include 'base.botones.html.twig' %}
+                </div>
+            </div>
+
+    {{ form_end(edit_form) }}
+
+
+{% endblock %}

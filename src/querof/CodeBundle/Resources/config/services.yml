@@ -1,0 +1,4 @@
+services:
+#    querof_code.example:
+#        class: querof\CodeBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

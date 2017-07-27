@@ -1,0 +1,66 @@
+querof\CodeBundle\Entity\Activity:
+    type: entity
+    table: activity
+    indexes:
+        IDX_AC74095AED5CA9E6:
+            columns:
+                - service_id
+        IDX_AC74095A12469DE2:
+            columns:
+                - category_id
+        IDX_AC74095A38C751C4:
+            columns:
+                - roles_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        duration:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+    manyToOne:
+        service:
+            targetEntity: Service
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                service_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        category:
+            targetEntity: Category
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                category_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        roles:
+            targetEntity: Roles
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                roles_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

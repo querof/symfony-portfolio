@@ -1,0 +1,32 @@
+querof\CodeBundle\Entity\Customer:
+    type: entity
+    table: customer
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        firstname:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        lastname:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        address:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

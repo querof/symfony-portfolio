@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frank Quero Portfolio | V.1</title>
+
+	<link href="{{ asset('templates/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('templates/font-awesome/css/font-awesome.css') }}" rel="stylesheet">
+
+    <link href="{{ asset('templates/css/animate.css') }}" rel="stylesheet">
+    <link href="{{ asset('templates/css/style.css') }}" rel="stylesheet">
+
+     {% block cssmodulo %}{% endblock %}
+
+</head>
+
+<body class="fixed-sidebar">
+    <div id="wrapper">
+		<!-- Inicio de Menu-->
+		  {% include 'base.menu.html.twig' %}
+		<!-- Fin de Menu -->
+		<div id="page-wrapper" class="gray-bg">
+
+			<!-- Inicio Barra Horizontal -->
+			    {% include 'base.horizontalbar.html.twig' %}
+			<!-- Fin Barra horizontal -->
+
+
+			 {% include 'base.route.html.twig' %}
+			 {% include 'base.mensaje.html.twig' %}
+			<!-- Inicio de Contenido -->
+
+				{% block body %}{% endblock %}
+
+			<!-- Fin de Contenido -->
+
+			<!-- Inicio footer -->
+			      {% include 'base.footer.html.twig' %}
+			<!-- Fin footer -->
+
+		</div>
+		<!-- Inicio Barra derecha -->
+		     {% include 'base.rightbar.html.twig' %}
+		<!-- Fin Barra derecha -->
+    </div>
+
+    <!-- Mainly scripts -->
+    <script src="{{ asset('templates/js/jquery-3.1.1.min.js') }}"></script>
+	<script src="{{ asset('templates/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('templates/js/plugins/metisMenu/jquery.metisMenu.js') }}"></script>
+	<script src="{{ asset('templates/js/plugins/slimscroll/jquery.slimscroll.min.js') }}"></script>
+
+	    <!-- Custom and plugin javascript -->
+    <script src="{{ asset('templates/js/inspinia.js') }}"></script>
+    <script src="{{ asset('templates/js/plugins/pace/pace.min.js') }}"></script>
+
+
+
+    {% block javascriptmodulo %}
+
+
+
+	{% endblock %}
+</body>
+</html>

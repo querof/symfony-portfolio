@@ -1,0 +1,24 @@
+analyst_index:
+    path:     /
+    defaults: { _controller: "querofCodeBundle:Analyst:index" }
+    methods:  GET
+
+analyst_show:
+    path:     /{id}/show
+    defaults: { _controller: "querofCodeBundle:Analyst:show" }
+    methods:  GET
+
+analyst_new:
+    path:     /new
+    defaults: { _controller: "querofCodeBundle:Analyst:new" }
+    methods:  [GET, POST]
+
+analyst_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "querofCodeBundle:Analyst:edit" }
+    methods:  [GET, POST]
+
+analyst_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "querofCodeBundle:Analyst:delete" }
+    methods:  DELETE

@@ -1,0 +1,4 @@
+login_index:
+    path:     /
+    defaults: { _controller: "querofCodeBundle:Login:index" }
+    methods:  GET

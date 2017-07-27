@@ -1,0 +1,7 @@
+querof_code:
+    resource: "@querofCodeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

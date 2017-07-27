@@ -1,0 +1,10 @@
+{% set _controller_all = app.request.attributes.get('_controller')|lower|split('::') %}
+
+{% set _controller_route = _controller_all[0]|split('\\') %}
+{% set _formName = _controller_route[0]~'_'~_controller_route[1]~'_'~_controller_route[3]%}
+{% set _formName = _formName |replace({ ('controller'): '' }) %}
+{{dump(app.request.attributes.get('_controller'))}}
+
+{% set _route = app.request.attributes.get("_route")|split('_') %}
+{% set controller = _route[0] %}
+{% set action = _route[1] %}

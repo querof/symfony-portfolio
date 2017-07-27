@@ -1,0 +1,83 @@
+{% extends 'base.forma.html.twig' %}
+
+{% block body %}
+
+
+{% set controller =  getControllerName()  %}
+{% set controller_title =  getControllerTitle()  %}
+{% set action =  getActionName()  %}
+{% set obj = _context[getObjName() ] %}
+
+
+
+		<div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5>Show {{controller_title}}</h5>
+                        <div class="ibox-tools">
+                            <a class="collapse-link">
+                                <i class="fa fa-chevron-up"></i>
+                            </a>
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <i class="fa fa-wrench"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-user">
+                                <li><a href="#">Config option 1</a>
+                                </li>
+                                <li><a href="#">Config option 2</a>
+                                </li>
+                            </ul>
+                            <a class="close-link">
+                                <i class="fa fa-times"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+
+                        <table class="table">
+		                        <tbody>
+							       {% for key, value in obj|cast_to_array %}
+
+							       		 {% set _campo_all = key|split('\\') %}
+							             {% set _campo = _campo_all[3]|lower|replace({(controller):''})|replace({('\x00'):''})  %}
+								         {% if _campo != 'id' %}
+								            <tr>
+								            	<th>
+							      				  {{ _campo|capitalize }}
+							      				</th>
+								                <td>
+																{% if _campo== 'date' %}
+
+																			{{ value | date('m/d/Y') }}
+
+																			{% else %}
+
+																			{{ value }}
+																	{% endif %}
+																	</td>
+
+
+
+							      			</tr>
+							      		  {% endif %}
+						      		{% endfor %}
+						      		<tr>
+						            	<th>
+					      				  {% include 'base.botones.html.twig' %}
+					      				</th>
+
+					      			</tr>
+						      		</tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+
+
+           </div>
+         </div>
+
+{% endblock %}

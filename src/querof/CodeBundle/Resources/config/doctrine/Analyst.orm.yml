@@ -1,0 +1,41 @@
+querof\CodeBundle\Entity\Analyst:
+    type: entity
+    table: analyst
+    indexes:
+        IDX_5FAB2C8C38C751C4:
+            columns:
+                - roles_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        firstname:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        lastname:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+    manyToOne:
+        roles:
+            targetEntity: Roles
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                roles_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

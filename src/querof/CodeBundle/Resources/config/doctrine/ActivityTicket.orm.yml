@@ -1,0 +1,61 @@
+querof\CodeBundle\Entity\ActivityTicket:
+    type: entity
+    table: activity_ticket
+    indexes:
+        IDX_C5D64DA381C06096:
+            columns:
+                - activity_id
+        IDX_C5D64DA3700047D2:
+            columns:
+                - ticket_id
+        IDX_C5D64DA3F65B3645:
+            columns:
+                - analyst_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: SEQUENCE
+    fields:
+        begindate:
+            type: date
+            nullable: false
+        enddate:
+            type: date
+            nullable: true
+    manyToOne:
+        activity:
+            targetEntity: Activity
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                activity_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        ticket:
+            targetEntity: Ticket
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                ticket_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+        analyst:
+            targetEntity: Analyst
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                analyst_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
